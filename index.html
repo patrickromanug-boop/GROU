@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>AHMEDZ HUB | Fashion & Lifestyle</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="main-header">
+  <div class="logo"><h2>AHMEDZ<span>HUB</span></h2></div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search dresses, shoes, bags...">
+    <button id="searchBtn"><i class="fas fa-search"></i></button>
+  </div>
+  <div class="user-actions">
+    <a href="#" id="loginBtn"><i class="fas fa-user"></i> <span id="userNameDisplay">Login</span></a>
+    <a href="#" id="cartIconBtn"><i class="fas fa-shopping-bag"></i> Cart (<span id="cartCount">0</span>)</a>
+  </div>
+</div>
+<div class="nav-links">
+  <a href="#" data-page="home">🏠 Home</a>
+  <a href="#" data-page="about">📖 About Us</a>
+  <a href="#" data-page="contact">📞 Contact</a>
+  <a href="#" data-category="accessories">💎 accessories</a>
+  <a href="#" data-category="clothes">👔 clothes</a>
+  <a href="#" data-category="shoes">👠 Shoes</a>
+  <a href="#" id="adminDashboardLink" style="display:none;">🔐 Admin Panel</a>
+</div>
+
+<div id="appContainer" class="container"></div>
+<footer>© 2025 AHMEDZ HUB — Elegance & Comfort | Uganda</footer>
+
+<!-- Cart Sidebar -->
+<div id="cartSidebar" class="cart-sidebar">
+  <div class="cart-header"><span>🛍️ Your Shopping Bag</span><span class="close-cart" id="closeCartBtn">&times;</span></div>
+  <div id="cartItemsList"></div>
+  <div class="cart-total" id="cartTotal">Total: UGX 0</div>
+  <div class="delivery-date" id="deliveryEstimate">🚚 Est. delivery: 5 business days</div>
+  <div id="upsellArea"><strong>✨ Complete your look</strong><div id="upsellSuggestions"></div></div>
+  <button id="checkoutButton" class="checkout-btn">✅ Checkout & Get Receipt</button>
+</div>
+
+<!-- Unified Login Modal -->
+<div id="authModal" class="form-modal">
+  <div class="form-card">
+    <h3>🔑 Sign in / Register</h3>
+    <input type="text" id="authName" placeholder="Full Name">
+    <input type="email" id="authEmail" placeholder="Email">
+    <input type="password" id="authPass" placeholder="Password">
+    <button id="submitAuthBtn">Access Store</button>
+    <p style="font-size:12px; margin-top:12px;">Admin: admin@modastyle.com /password </p>
+    <button id="closeAuthModal" style="background:#aaa; margin-top:8px;">Close</button>
+  </div>
+</div>
+
+<!-- Admin Dashboard Modal -->
+<div id="adminDashboardModal" class="form-modal">
+  <div class="form-card" style="width: 750px; max-width:90%; max-height:80vh; overflow-y:auto;">
+    <h3>👑 Admin Dashboard - Style Manager</h3>
+    <div class="admin-stats">
+      <div class="stat-card"><h4>Total Orders</h4><p id="statOrders">0</p></div>
+      <div class="stat-card"><h4>Revenue (UGX)</h4><p id="statRevenue">0</p></div>
+      <div class="stat-card"><h4>Customers</h4><p id="statUsers">0</p></div>
+    </div>
+    <div class="admin-section"><h4>📦 Recent Orders</h4><div id="adminOrdersList" style="max-height:200px; overflow:auto;"></div></div>
+    <div class="admin-section"><h4>💬 Live Chat (Reply to customers)</h4><div id="adminChatMessages" style="background:#f7f2ed; padding:10px; border-radius:16px; height:150px; overflow:auto;"></div><input type="text" id="adminReplyInput" placeholder="Type admin reply..."><button id="sendAdminReplyBtn">Send</button></div>
+    <div class="admin-section"><h4>🛍️ Product Catalog</h4><div id="adminProductList" style="max-height:180px; overflow:auto;"></div></div>
+    <button id="closeAdminDashboardBtn" style="background:#2d2f3e;">Close Dashboard</button>
+  </div>
+</div>
+
+<!-- Chat widget -->
+<div id="openChatBtn" class="open-chat"><i class="fas fa-headset"></i> Need help?</div>
+<div id="chatWidget" class="chat-widget">
+  <div class="chat-header">💬 Style Assistant <span style="float:right;">&times;</span></div>
+  <div class="chat-messages" id="chatMessagesDisplay"></div>
+  <div class="chat-input"><input type="text" id="chatMsgInput" placeholder="Your message..."><button id="sendChatMsgBtn" class="chat-btn">Send</button></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
